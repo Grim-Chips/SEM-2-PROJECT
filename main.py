@@ -1,11 +1,12 @@
 class Units:
-    def __init__(self, UnitId, location, size, status, rent, sellingprice):
+    def __init__(self, UnitId, location, size, status, rent, sellingprice, ownerId):
         self.UnitId = UnitId
         self.location = location
         self.size = size
         self.status = status 
         self.rent = rent
         self.sellingprice = sellingprice
+        self.ownerId = ownerId
 
     def markedasRented(self):
         self.status = "Rented"
@@ -14,14 +15,16 @@ class Units:
         self.status = "Sold"
     
     def __str__(self):
-        return f"{self.UnitId.title()} | {self.location} | ${self.size} | {self.status} | ${self.rent} | ${self.sellingprice}"
+        return f"{self.UnitId.title()} | {self.location} | ${self.size} | {self.status} | ${self.rent} | ${self.sellingprice} | {self.ownerId}"
 
 # to check if it works
 if __name__ == "__main__":
-    unit = Units("unit101", "Downtown", 1200, "Rented", None, 300000)
+    unit = Units("unit101", "Downtown", 1200, "Rented", None, 300000, "owner123")
     if unit.status == "Rented":
         unit.markedasRented()
     print(unit)
 
     # unit.markedasRented()
     # print(unit)
+
+class 
