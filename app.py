@@ -216,7 +216,7 @@ class UnitsGUI:
                  bg="#1976d2", fg="white", width=12, font=("Arial", 9, "bold")).pack(side=tk.LEFT, padx=5)
 
     def validate_numeric_input(self, value: str, field_name: str, allow_empty: bool = False) -> Optional[float]:
-        # Validate and convert numeric input with better error messages
+        # Validate and convert numeric input with error messages
         if not value.strip():
             if allow_empty:
                 return None
@@ -236,7 +236,7 @@ class UnitsGUI:
             raise e
 
     def add_unit(self):
-        # Add a new unit to the database with improved error handling
+        # Add a new unit to the database with error handling
         try:
             # Get and validate basic string inputs
             unit_id = self.unit_id_entry.get().strip()
